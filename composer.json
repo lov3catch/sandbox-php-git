@@ -1,0 +1,10 @@
+{
+    "name": "ihorkpl/sandbox-php-git",
+    "authors": [
+        {
+            "name": "Ihor K.",
+            "email": "lov3catch@gmail.com"
+        }
+    ],
+    "require": {}
+}
