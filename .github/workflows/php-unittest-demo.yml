@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 Run tests. ${{ github.event_name }} event."
+      -name: Current dir
+        run: pwd
       - name: Check composer.json
         run: composer validate --strict
       - name: Install dependencies
