@@ -5,7 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 Run tests. ${{ github.event_name }} event."
-      - name: Check composer.json
-        run: composer validate --strict --working-dir=../../
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --working-dir=../../
+      - uses: php-actions/composer@v5
