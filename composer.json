@@ -1,5 +1,7 @@
 {
     "name": "ihorkpl/sandbox-php-git",
+    "description": "Playground",
+    "license": ["MIT"],
     "authors": [
         {
             "name": "Ihor K.",
