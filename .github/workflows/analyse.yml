@@ -1,0 +1,15 @@
+name: Analyse
+
+on: [ push ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Static analyse
+        uses: docker://vimeo/psalm-github-actions
+        with:
+          security_analysis: true
