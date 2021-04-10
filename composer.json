@@ -8,5 +8,7 @@
             "email": "lov3catch@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpgt/webengine": "^3.0"
+    }
 }
