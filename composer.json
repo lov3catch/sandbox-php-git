@@ -10,5 +10,8 @@
     ],
     "require": {
         "phpgt/webengine": "^3.0"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^4.7"
     }
 }
