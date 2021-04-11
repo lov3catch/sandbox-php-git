@@ -17,3 +17,6 @@ jobs:
           security_analysis: true
           composer_require_dev: true
           composer_ignore_platform_reqs: true
+
+      - name: Type check
+        uses: make type-check
