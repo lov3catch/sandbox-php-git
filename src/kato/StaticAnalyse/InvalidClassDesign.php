@@ -18,4 +18,9 @@ class InvalidClassDesign
     function takesAnInt(int $i) {
         return [$i, "hello"];
     }
+
+    function foo()
+    {
+        return $this->bar();
+    }
 }
