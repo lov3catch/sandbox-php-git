@@ -7,20 +7,26 @@ class InvalidClassDesign
 {
     private int $value;     // should be invalid type
 
-    public function __construct(string $value)
+    public function __construct(int $value)
     {
         $this->value = $value;
     }
 
     /**
-     * @return array<string>
+     * @return array<int>
      */
-    function takesAnInt(int $i) {
-        return [$i, "hello"];
+    function takesAnInt(int $i): array
+    {
+        return [$i];
     }
 
-    function foo()
+    public function bar(): void
     {
-        return $this->bar();
+
+    }
+
+    public function foo(): void
+    {
+        $this->bar();
     }
 }
