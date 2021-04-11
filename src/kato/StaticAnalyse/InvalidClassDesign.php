@@ -15,7 +15,7 @@ class InvalidClassDesign
     /**
      * @return array<int>
      */
-    function takesAnInt(string $i): array
+    function takesAnInt(int $i): array
     {
         return [$i];
     }
