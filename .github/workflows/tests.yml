@@ -9,5 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Composer install
+        uses: php-actions/composer@v5
+        with:
+          php_version: 8.0
+          version: 2
+          dev: no
+          args: --profile --ignore-platform-reqs
       - name: Run tests
         run: make run-tests
