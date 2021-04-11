@@ -15,3 +15,5 @@ jobs:
           php_version: 8.0
           version: 2
           security_analysis: true
+          composer_require_dev: true
+          composer_ignore_platform_reqs: true
