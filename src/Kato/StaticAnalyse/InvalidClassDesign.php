@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\Kato\StaticAnalyse;
+
 
 class InvalidClassDesign
 {
@@ -23,6 +25,11 @@ class InvalidClassDesign
     public function bar(): void
     {
 
+    }
+
+    public function sayHello(): string
+    {
+        return 'hello';
     }
 
     public function foo(): void

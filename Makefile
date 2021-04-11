@@ -3,3 +3,6 @@ type-check:
 
 run-tests:
 	php vendor/bin/phpunit tests/*
+
+repl:
+	php composer repl
