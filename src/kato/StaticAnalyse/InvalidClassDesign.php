@@ -11,4 +11,11 @@ class InvalidClassDesign
     {
         $this->value = $value;
     }
+
+    /**
+     * @return array<string>
+     */
+    function takesAnInt(int $i) {
+        return [$i, "hello"];
+    }
 }
