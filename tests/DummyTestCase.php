@@ -7,6 +7,6 @@ class DummyTestCase extends \PHPUnit\Framework\TestCase
 {
     public function testFoo(): void
     {
-       self::assertEquals(1, 2);
+       self::assertEquals(1, 1);
     }
 }
