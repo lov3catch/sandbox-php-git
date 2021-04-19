@@ -4,9 +4,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: PHP Code Style (phpcs)
+        working-directory: ./../../
         run: |
-          chmod +x "${GITHUB_WORKSPACE}/scripts/codestyle.sh"
-          "${GITHUB_WORKSPACE}/scripts/codestyle.sh master develop"
+          chmod +x "scripts/codestyle.sh"
+          sh "scripts/codestyle.sh master develop"
