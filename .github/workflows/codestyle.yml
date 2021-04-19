@@ -8,4 +8,4 @@ jobs:
 
       - name: PHP Code Style (phpcs)
         run:  |
-          sh ../scripts/codestyle.sh
+          sh ../../scripts/codestyle.sh
