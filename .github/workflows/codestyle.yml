@@ -8,4 +8,5 @@ jobs:
 
       - name: PHP Code Style (phpcs)
         run: |
-          sh ./scripts/codestyle.sh
+          chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
+          sh "${GITHUB_WORKSPACE}/.github/scripts/codestyle.sh"
