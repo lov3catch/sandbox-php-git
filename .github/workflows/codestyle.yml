@@ -7,4 +7,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: PHP Code Style (phpcs)
-        run: ../scripts/codestyle.sh
+        run: ../../scripts/codestyle.sh
