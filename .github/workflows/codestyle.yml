@@ -10,5 +10,5 @@ jobs:
       - name: PHP Code Style (phpcs)
         working-directory: ./../../
         run: |
-          chmod +x "scripts/codestyle.sh"
-          sh "scripts/codestyle.sh master develop"
+          chmod +x "./scripts/codestyle.sh"
+          sh "./scripts/codestyle.sh master develop"
