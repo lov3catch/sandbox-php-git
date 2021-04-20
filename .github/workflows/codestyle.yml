@@ -32,6 +32,9 @@ jobs:
           echo "GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER"
           echo "GITHUB_WORKFLOW=$GITHUB_WORKFLOW"
           echo "GITHUB_ACTION=$GITHUB_ACTION"
+      - name: Git branch
+        run: |
+          git brach
       - name: PHP Code Style (phpcs)
         run: |
           ls ./vendor/
