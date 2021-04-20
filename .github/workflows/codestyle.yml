@@ -10,9 +10,6 @@ jobs:
           fetch-depth: 0
 
       - name: PHP Code Style (phpcs)
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
         run: |
           chmod +x ./scripts/codestyle.sh
-          sh ./scripts/codestyle.sh master develop
+          sh ./scripts/codestyle.sh e1fca1305b083cc7f586624c0e449475e4a3a4ee..eb85ad9f5aaffcb5ac1ab916e18980362205c526
