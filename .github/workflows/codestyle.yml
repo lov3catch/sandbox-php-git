@@ -37,6 +37,8 @@ jobs:
           git branch
       - name: PHP Code Style (phpcs)
         run: |
+          git fetch origin $GITHUB_BASE_REF
+          git fetch origin $GITHUB_HEAD_REF
           ls ./vendor/
           chmod +x ./scripts/codestyle.sh
           sh ./scripts/codestyle.sh $GITHUB_BASE_REF $GITHUB_HEAD_REF
