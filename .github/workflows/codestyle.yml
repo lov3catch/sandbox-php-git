@@ -19,7 +19,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "$GITHUB_CONTEXT"
+#          echo "$GITHUB_CONTEXT"
           echo ${{ toJson(github).event }}
       - name: Print environment variables exposed by GitHub
         run: |
