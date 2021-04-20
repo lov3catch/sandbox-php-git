@@ -9,6 +9,4 @@ class ExampleClass
     public function __construct()
     {
     }
-
-
 }
