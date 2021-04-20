@@ -4,10 +4,43 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: PHP Code Style (phpcs)
-        uses: chindit/actions-phpcs@master
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          # Folder to check code style
-          dir: src/
+          fetch-depth: 0
+      - name: Composer install
+        uses: php-actions/composer@v5
+        with:
+          php_version: 8.0
+          version: 2
+          dev: yes
+          args: --profile --ignore-platform-reqs
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "${{ github.event.after }}"
+          echo "${{ github.event.before }}"
+      - name: Print environment variables exposed by GitHub
+        run: |
+          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "GITHUB_SHA=$GITHUB_SHA"
+          echo "GITHUB_REF=$GITHUB_REF"
+          echo "GITHUB_HEAD_REF=$GITHUB_HEAD_REF"
+          echo "GITHUB_BASE_REF=$GITHUB_BASE_REF"
+          echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
+          echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
+          echo "GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER"
+          echo "GITHUB_WORKFLOW=$GITHUB_WORKFLOW"
+          echo "GITHUB_ACTION=$GITHUB_ACTION"
+      - name: Git branch
+        run: |
+          git branch
+      - name: PHP Code Style (phpcs)
+        run: |
+          git fetch origin $GITHUB_BASE_REF
+          git fetch origin $GITHUB_HEAD_REF
+          ls ./vendor/
+          chmod +x ./scripts/codestyle_check.sh
+          sh ./scripts/codestyle_check.sh "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
