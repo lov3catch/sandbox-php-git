@@ -42,5 +42,5 @@ jobs:
           git fetch origin $GITHUB_BASE_REF
           git fetch origin $GITHUB_HEAD_REF
           ls ./vendor/
-          chmod +x ./scripts/codestyle.sh
+          chmod +x ./scripts/codestyle_check.sh
           sh ./scripts/codestyle_check.sh "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
