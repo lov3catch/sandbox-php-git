@@ -34,7 +34,7 @@ jobs:
           echo "GITHUB_ACTION=$GITHUB_ACTION"
       - name: Git branch
         run: |
-          git brach
+          git branch
       - name: PHP Code Style (phpcs)
         run: |
           ls ./vendor/
