@@ -8,4 +8,6 @@ changed_files=$(git diff --name-only --line-prefix=`git rev-parse --show-topleve
 echo $changed_files
 echo "${GITHUB_WORKSPACE}/.github/workflows/scripts/codestyle.sh"
 
-#${GITHUB_WORKSPACE}/vendor/squizlabs/php_codesniffer/bin/phpcs $changed_files
+./vendor/squizlabs/php_codesniffer/bin/phpcs $changed_files
+
+exit 1
