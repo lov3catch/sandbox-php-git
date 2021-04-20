@@ -8,7 +8,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
       - name: Composer install
         uses: php-actions/composer@v5
         with:
@@ -16,9 +15,7 @@ jobs:
           version: 2
           dev: no
           args: --profile --ignore-platform-reqs
-
       - name: PHP Code Style (phpcs)
         run: |
-          composer install --profile --ignore-platform-reqs
           chmod +x ./scripts/codestyle.sh
           sh ./scripts/codestyle.sh e1fca1305b083cc7f586624c0e449475e4a3a4ee eb85ad9f5aaffcb5ac1ab916e18980362205c526
