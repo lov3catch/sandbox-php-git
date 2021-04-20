@@ -9,6 +9,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Composer install
+        uses: php-actions/composer@v5
+        with:
+          php_version: 8.0
+          version: 2
+          dev: no
+          args: --profile --ignore-platform-reqs
+
       - name: PHP Code Style (phpcs)
         run: |
           chmod +x ./scripts/codestyle.sh
