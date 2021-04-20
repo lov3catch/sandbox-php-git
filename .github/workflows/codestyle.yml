@@ -43,4 +43,4 @@ jobs:
           git fetch origin $GITHUB_HEAD_REF
           ls ./vendor/
           chmod +x ./scripts/codestyle.sh
-          sh ./scripts/codestyle.sh "${{ github.event.before }}" "${{ github.event.after }}"
+          sh ./scripts/codestyle.sh "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
