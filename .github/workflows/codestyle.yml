@@ -19,6 +19,12 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: Dump SHA
+        env:
+          TARGET_BRANCH: ${{ toJson(github).event.before }}
+          SOURCE_BRANCH: ${{ toJson(github).event.after }}
+        run: echo "$TARGET_BRANCH"
+        run: echo "$SOURCE_BRANCH"
       - name: PHP Code Style (phpcs)
         run: |
           ls ./vendor/
