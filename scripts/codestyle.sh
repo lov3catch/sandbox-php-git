@@ -9,5 +9,3 @@ echo $changed_files
 echo "${GITHUB_WORKSPACE}/.github/workflows/scripts/codestyle.sh"
 
 ./vendor/squizlabs/php_codesniffer/bin/phpcs $changed_files
-
-exit 1
